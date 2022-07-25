@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 public class dijkstra {
     
-    private static final int  length=80; // Toplam þehir sayýsý   
+    private static final int  length=80;
     private static final int noparent=-1;
     
     ArrayList  <Integer> distancetogo = new ArrayList <Integer>();
@@ -82,18 +82,17 @@ public class dijkstra {
                if(choice.size()==1){        	
                   returncity=choice.get(0);
                     	}  	
-           int distances[] = new int[length]; // Kaynaktan hedeflere olan uzaklýk
-           boolean situation[]= new boolean[length]; // Ziyaret edilme distancesu               
+           int distances[] = new int[length];
+           boolean situation[]= new boolean[length];              
            
       for(int i=0; i<length; i++){
-               // Baþlangýçta tüm düðümlere "sonsuz" ve "false" yani uðranmamýþ atadýk
                distances[i]=Integer.MAX_VALUE;
                situation[i]=false;
     }
            
-            distances[start]=0; // Kaynaðýn kendine olan uzaklýðý her zaman 0 olur
-            int  parent[]  = new int[length]; // gidilen kýsa yolu tutacak
-            parent[start]=noparent; // Baþlangýçýn ebeveyni yok
+            distances[start]=0; 
+            int  parent[]  = new int[length]; 
+            parent[start]=noparent; 
                 
       for(int j=0; j<length; j++){
           int theClosestIndex=-1;
@@ -105,7 +104,7 @@ public class dijkstra {
                 dis=distances[k];
             }
         }
-            situation[theClosestIndex]=true; // Seçilene uðrandý
+            situation[theClosestIndex]=true; 
         
         for(int k=0; k<length; k++){ 
         int distance = neighborhoodkMatrix[theClosestIndex][k];   
@@ -126,18 +125,17 @@ public class dijkstra {
        
   private int dijkstraReturn(int neighborhoodkMatrix [][], int start){
     	 
-           int distances[] = new int[length]; // Kaynaktan hedeflere olan uzaklýk
-           boolean distances[]= new boolean[length]; // Ziyaret edilme distancesu
+           int distances[] = new int[length]; 
+           boolean distances[]= new boolean[length]; 
            
            		for(int i=0; i<length; i++){
-           			// Baþlangýçta tüm düðümlere "sonsuz" ve "false" yani uðranmamýþ atadýk
            			distances[i]=Integer.MAX_VALUE;
            			distances[i]=false;
     }
            
-           			distances[start]=0; // Kaynaðýn kendine olan uzaklýðý her zaman 0 olur
-           			int  parent[]  = new int[length]; // gidilen kýsa yolu tutacak
-           			parent[start]=noparent; // Baþlangýçýn ebeveyni yok
+           			distances[start]=0;
+           			int  parent[]  = new int[length];
+           			parent[start]=noparent; 
                 
             	for(int j=1; j<length; j++){
             		int theClosestIndex=-1;
@@ -149,7 +147,7 @@ public class dijkstra {
             			dis=distances[k];
             }
         }
-            		distances[theClosestIndex]=true; // Seçilene uðrandý
+            		distances[theClosestIndex]=true; 
         
             	for(int k=0; k<length; k++){
             
